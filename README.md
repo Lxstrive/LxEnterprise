@@ -3,13 +3,14 @@
 ### clone项目到本地
 
 
-*进入到项目所在目录找到` requirements.txt `安装项目所需环境
+
+>>进入到项目所在目录找到` requirements.txt `安装项目所需环境
 
 pip install -r requirements.txt
 
 安装mysql数据库 密码 ：123456
 
-新建数据库  数据库名  django_combat 密码
+新建数据库  数据库名  django_combat
 
 导入项目目录下的django_combat.sql文件
 
