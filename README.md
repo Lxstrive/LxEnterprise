@@ -12,7 +12,7 @@
 
 >>4.新建数据库  数据库名  django_combat
 
->>5.导入项目目录下的django_combat.sql文件
+>>5.导入项目目录下的django_combat.sql文件(不导入sql文件，视频不能播放)
 
 >>6.python manage.py runserver 
 
@@ -39,4 +39,6 @@
 >> 个人收付款功能: paysAPI
 
 
- # 项目介绍
+ ### 项目介绍
+ 
+*实在不知道该怎么介绍啊*
