@@ -1,7 +1,7 @@
 # LxEnterprise 企业官网项目(Django2.0, python3.x)
 ### clone项目到本地
 
-    进入到项目所在目录找到`requirements.txt`安装项目所需环境
+    进入到项目所在目录找到` requirements.txt `安装项目所需环境
     
     pip install -r requirements.txt
     
@@ -14,4 +14,5 @@
     python manage.py runserver 
     
     浏览器中访问 127.0.0.1:8000访问
+    Thank `You` . Please `Call` Me `Coder`
 
