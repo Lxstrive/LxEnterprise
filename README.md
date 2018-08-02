@@ -2,7 +2,8 @@
 
 ### clone项目到本地
 
-进入到项目所在目录找到` requirements.txt `安装项目所需环境
+
+*进入到项目所在目录找到` requirements.txt `安装项目所需环境
 
 pip install -r requirements.txt
 
