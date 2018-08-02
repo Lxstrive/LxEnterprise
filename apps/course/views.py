@@ -25,6 +25,7 @@ def course_index(request):
     return render(request, 'course/course_index.html', context=context)
 
 
+@user_login_required
 def course_detail(request, course_id):
     """
     课程详情页
