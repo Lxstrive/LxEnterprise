@@ -1,6 +1,6 @@
 # LxEnterprise 企业官网项目(Django2.0, python3.x)
 
-### clone项目到本地
+### 下载项目到本地
 
 
 
@@ -22,3 +22,19 @@
 
 
 ### 项目介绍
+
+
+>>前端语言:html/css/js/ajax/jquery/ 插件:gulp
+
+>>后端语言:python
+
+>>框架: django-2.0/djangorestframework
+
+>>调试工具: django-debug-toolbar
+
+>>实现分页功能第三方库: django-pure-pagination
+
+>>视频点播: 百度云
+
+>> 个人收付款功能: paysAPI
+
