@@ -1,0 +1,99 @@
+{% extends 'cms/base.html' %}
+{% load staticfiles %}
+{% block title %}
+    {% if news %}
+        编辑新闻
+        {% else %}
+        发布新闻
+    {% endif %}
+{% endblock %}
+{% block head %}
+    <script src='{% static 'ueditor/ueditor.config.js' %}'></script>
+    <script src="{% static 'ueditor/ueditor.all.min.js' %}"></script>
+    <script src="{% static 'js/write_news.js' %}" type="text/javascript"></script>
+
+{% endblock %}
+{% block content-header %}
+    <h1>
+     {% if news %}
+        编辑新闻
+        {% else %}
+        发布新闻
+    {% endif %}
+    </h1>
+{% endblock %}
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <form action="" class="form">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="title-form">标题</label>
+                            {% if news %}
+                            <input type="text"  value="{{ news.title }}" class="form-control" name="title" id="title-form">
+                            {% else %}
+                            <input type="text" class="form-control" name="title" id="title-form">
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            <label for="category-form">分类</label>
+                            <select name="category" class="form-control" id="category-form">
+                                {% for category in categories %}
+                                    {% if news and news.category_id == category.pk %}
+                                        <option value="{{ category.pk }}" selected>{{ category.name }}</option>
+                                        {% else %}
+                                        <option value="{{ category.pk }}">{{ category.name }}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="desc-form">描述</label>
+                            {% if news %}
+                            <input type="text" class="form-control" name="desc" id="desc-form" value="{{ news.desc }}">
+                            {% else %}
+                            <input type="text" class="form-control" name="desc" id="desc-form">
+
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            <label for="thumbnail-form">缩略图</label>
+                            <div class="input-group">
+                                {% if news %}
+                                <input type="text" value="{{ news.thumbnail }}" class="form-control" name="thumbnail" id="thumbnail-form">
+                                    {% else %}
+                                <input type="text" class="form-control" name="thumbnail" id="thumbnail-form">
+                                {% endif %}
+                                <span class="input-group-btn">
+                                    <label class="btn btn-primary btn-file">
+                                       上传图片 <input hidden type="file" class="btn btn-primary" id="thumbnail-btn">
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="content-form">内容</label>
+                            {% if news %}
+                                <script id="editor" type="text/plain">
+                                 {{ news.content }}
+                                </script>
+                                {% else %}
+                                <script id="editor" type="text/plain">
+                                </script>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                    <div class="box-footer">
+                        <button class="btn btn-primary pull-right" id="submit-btn" data-news-id="{{ news.pk }}">
+                            发布新闻
+                        </button>
+                    </div>
+                 {% csrf_token %}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

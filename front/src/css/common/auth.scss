@@ -1,0 +1,143 @@
+@import "constants.scss";
+@import "init.scss";
+body{
+    background: #cccccc;
+}
+
+.mask-wrapper{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    //background: url("../../images/background.jpg") no-repeat;
+    background: rgba(0,0,0,0.8);
+    background-size: 100%;
+    overflow-y: scroll;
+    display: none;
+    z-index: 100;
+
+
+    .auth-wrapper{
+        $authWrapperHeight:530px;
+        $authWrapperWidth:400px;
+        width: $authWrapperWidth;
+        height: $authWrapperHeight;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        margin-left: -$authWrapperWidth/2;
+        margin-top: -$authWrapperHeight/2;
+        .close-wrapper{
+            width: 100%;
+            height: 40px;
+            background: #ffffff;
+            .close-btn{
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                float: right;
+                margin-top: 10px;
+                color: $assistFontColor;
+                cursor: pointer;
+            }
+        }
+        .auth-inner-wrapper{
+            width: 100%;
+            height: $authWrapperHeight - 40px;
+            position: relative;
+            overflow: hidden;
+
+            .scroll-wrapper{
+                width: $authWrapperWidth*2;
+                position: absolute;
+                top:0;
+                left: 0;
+                .auth-group{
+                    width: $authWrapperWidth;
+                    padding: 0 20px 20px;
+                    box-sizing: border-box;
+                    .top-group{
+                        height: 36px;
+                        border-bottom: 1px solid #cccccc;
+                        line-height: 32px;
+
+                        .title{
+                            float: left;
+                            color: $mainFontColor;
+                            border-bottom: 3px solid $themColor;
+                        }
+                        .switch{
+                            float: right;
+                            color: $themColor;
+                        }
+                    }
+                    .form-group{
+                        margin-top: 20px;
+                        .input-group{
+                            margin-bottom: 20px;
+                            height: 40px;
+                            .form-control{
+                                border: 1px solid #cccccc;
+                                padding: 10px;
+                                box-sizing: border-box;
+                                height: 40px;
+                                width: 100%;
+                                outline: none;
+                            }
+                            .remember-label{
+                                font-size: 14px;
+                                color: $mainFontColor;
+                            }
+                            .submit-btn{
+                                width: 100%;
+                                height: 40px;
+                                background: $themColor;
+                                cursor: pointer;
+                                color: #ffffff;
+                                border: none;
+                                &:hover{
+                                    background: #f7766a;
+                                }
+                            }
+                            .short-input-group{
+                                width: 250px;
+                                float: left;
+                            }
+                            .input-group-addon{
+                                float: right;
+                                .sms-captcha-btn{
+                                    width: 100%;
+                                    height: 40px;
+                                    background: $themColor;
+                                    display: inline-block;
+                                    text-align: center;
+                                    line-height: 40px;
+                                    box-sizing: border-box;
+                                    cursor: pointer;
+                                    color: #ffffff;
+                                    font-size: 10px;
+                                    &:hover{
+                                        background: #f7766a;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+                .signin-group{
+                    float: left;
+                    background: #ffffff;
+
+                }
+                .signup-group{
+                    float: left;
+                    background: #ffffff;
+
+                }
+            }
+        }
+
+    }
+}

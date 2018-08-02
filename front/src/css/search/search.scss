@@ -1,0 +1,80 @@
+@import "../common/init.scss";
+@import "../common/constants.scss";
+@import "../common/header.scss";
+@import "../common/footer.scss";
+@import "../common/body.scss";
+@import "../common/news_list.scss";
+
+.main{
+    .wrapper{
+        margin-top: 16px;
+        .main-content-wrapper{
+            .search{
+                overflow: auto;
+                width: $mainBoxWidth;
+                box-sizing: border-box;
+                border: 1px solid #cccccc;
+                padding: 50px 30px;
+                background: #ffffff;
+                box-shadow: 8px 9px 10px #3a3a3a;
+                .search-text{
+                    width: 615px;
+                    border: 1px solid #ccc;
+                    border-radius: 2px;
+                    border-right: none;
+                    float: left;
+                    line-height: 22px;
+                    padding: 10px;
+                    font-size: 22px;
+                    outline: 0;
+                    box-sizing: border-box;
+                    height: 46px;
+                }
+                .button{
+                    width: 120px;
+                    height: 46px;
+                    float: left;
+                    line-height: 46px;
+                    text-align: center;
+                    background: #e63929;
+                    color: #fff;
+                    cursor: pointer;
+                    border-radius: 2px;
+                }
+            }
+            .list-outer-group{
+                box-shadow: 8px 9px 10px #3a3a3a;
+                background: #ffffff;
+
+                .list-tab{
+                    width: 100%;
+                    height: 64px;
+                    overflow: hidden;
+                    border: 1px solid #eee;
+                    border-left: none;
+                    border-right: none;
+                    li{
+                        float: left;
+                        padding: 0 10px;
+                        margin-top: 20px;
+                        a{
+                            color: #878787;
+
+                        }
+                        &:first-of-type{
+                            border-left: 5px solid #5c87d9 ;
+                        }
+                        &.active{
+                            a{
+                                color: #212121;
+                            }
+                        }
+                    }
+                }
+                .list-inner-group{
+                    @include news_list;
+                }
+            }
+        }
+    }
+}

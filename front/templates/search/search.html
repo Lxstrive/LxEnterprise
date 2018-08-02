@@ -1,0 +1,81 @@
+
+
+{% extends 'base/front_base.html' %}
+{% load staticfiles %}
+{% block title %}
+    搜索页
+{% endblock %}
+{% block head %}
+     <link rel="stylesheet" href="{% static 'css/search/search.min.css' %}">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_742160_v6ig1rdkb1b.css">
+{% endblock %}
+{% block main %}
+    <div class="main">
+    <div class="wrapper">
+
+        <div class="main-content-wrapper">
+            <div class="search">
+                <input type="text" placeholder="请输入搜索内容" class="search-text">
+                <div class="button">搜索</div>
+            </div>
+
+            <div class="list-outer-group">
+                <ul class="list-tab">
+                    <li class="active"><a href="#">最新资讯</a></li>
+                </ul>
+                <ul class="list-inner-group">
+                    <li>
+                        <div class="thumbnail-group">
+                            <a href=""><img src="https://static-image.xfz.cn/1531294603_658.jpg-website.news.list" alt=""></a>
+                        </div>
+                        <div class="news-group">
+                            <p class="title"><a href="#">综艺“限定团”一地鸡毛，各方势力的“利”与“义”</a></p>
+                            <p class="desc">从去年开始，因为《中国有嘻哈》《明日之子》的出现，选秀又一次成为了吸睛综艺类型，尤其是这个热度在今年的《偶像练习生》《创造101》之后达到了巅峰，无数观众被少男少女的一颦一笑所牵动。</p>
+                            <p class="more">
+                                    <span class="category">
+                                        深度报道
+                                    </span>
+                                <span class="pub-time">1小时前</span>
+                                <span class="author">LxStrive</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="thumbnail-group">
+                            <a href=""><img src="https://static-image.xfz.cn/1531294603_658.jpg-website.news.list" alt=""></a>
+                        </div>
+                        <div class="news-group">
+                            <p class="title"><a href="#">综艺“限定团”一地鸡毛，各方势力的“利”与“义”</a></p>
+                            <p class="desc">从去年开始，因为《中国有嘻哈》《明日之子》的出现，选秀又一次成为了吸睛综艺类型，尤其是这个热度在今年的《偶像练习生》《创造101》之后达到了巅峰，无数观众被少男少女的一颦一笑所牵动。</p>
+                            <p class="more">
+                                    <span class="category">
+                                        深度报道
+                                    </span>
+                                <span class="pub-time">1小时前</span>
+                                <span class="author">LxStrive</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="thumbnail-group">
+                            <a href=""><img src="https://static-image.xfz.cn/1531294603_658.jpg-website.news.list" alt=""></a>
+                        </div>
+                        <div class="news-group">
+                            <p class="title"><a href="#">综艺“限定团”一地鸡毛，各方势力的“利”与“义”</a></p>
+                            <p class="desc">从去年开始，因为《中国有嘻哈》《明日之子》的出现，选秀又一次成为了吸睛综艺类型，尤其是这个热度在今年的《偶像练习生》《创造101》之后达到了巅峰，无数观众被少男少女的一颦一笑所牵动。</p>
+                            <p class="more">
+                                    <span class="category">
+                                        深度报道
+                                    </span>
+                                <span class="pub-time">1小时前</span>
+                                <span class="author">LxStrive</span>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {% include 'common/siderbar.html' %}
+    </div>
+</div>
+{% endblock %}

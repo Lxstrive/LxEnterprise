@@ -1,0 +1,148 @@
+@import "../common/header.scss";
+@import "../common/body.scss";
+@import "../common/footer.scss";
+@import "../common/constants.scss";
+
+.main{
+    .wrapper{
+        .main-content-wrapper{
+            box-shadow: 8px 9px 10px #3a3a3a;
+            background: #ffffff;
+            padding: 20px;
+            box-sizing: border-box;
+            .news-wrapper{
+                .title{
+                    color: $mainFontColor;
+                    font-size: 24px;
+                    font-weight: 400;
+                }
+                .news-info{
+                    overflow: hidden;
+                    margin-top: 20px;
+                    color: $assistFontColor;
+                    font-size: 14px;
+                    line-height: 28px;
+                    height: 28px;
+                    .info-group{
+                        float: left;
+                        .pub-time{
+                            margin-left: 20px;
+                        }
+                        .category{
+                            margin-left: 20px;
+                            background: $themColor;
+                            color: #ffffff;
+                            padding: 0 5px;
+                            border-radius: 5px;
+                        }
+                    }
+                    .share-group{
+                        float: right;
+                        overflow: hidden;
+                        span{
+                            float: left;
+                        }
+                        .weixin{
+                            float: left;
+                            width: 35px;
+                            height: 35px;
+                            background: url("../../images/fxwx.png") no-repeat;
+                            background-size: 100%;
+                        }
+                        .weibo{
+                            float: left;
+                            width: 35px;
+                            height: 35px;
+                            background: url("../../../dist/images/fxwb.png") no-repeat;
+                            background-size: 80%;
+                        }
+                    }
+
+                }
+                .article{
+                    margin-top: 25px;
+                    img{
+                        max-width: 80%;
+                        max-height: 70%;
+                    }
+                }
+            }
+            .comment-wrapper{
+                border-top: 1px solid #cccccc;
+                padding-top: 20px;
+                .title{
+                    color: $mainFontColor;
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+                .comment-textarea{
+                    margin-top: 10px;
+                    width: 100%;
+                    resize: none;
+                    outline: none;
+                    border: 1px solid #cccccc;
+                    border-radius: 5px;
+                    font-size: 14px;
+                    color: #3a3a3a;
+                    padding: 6px 20px;
+                    box-sizing: border-box;
+                }
+                .nologin-textarea{
+                    height: 40px;
+                    line-height: 26px;
+                    overflow: hidden;
+                }
+                .logined-textarea{
+                    height: 80px;
+                }
+                .submit-btn-group{
+                    text-align: right;
+                    margin-top: 15px;
+                    .submit-btn{
+                        background: #f7766a;
+                        border: none;
+                        padding: 10px 15px;
+                        color: #ffffff;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        &:hover{
+                            background: #5c87d9;
+                        }
+                    }
+                }
+                .comment-list{
+                    margin-top: 20px;
+                    li{
+                        border-bottom: 1px solid #ccc;
+                        padding-bottom: 20px;
+                        margin-bottom: 15px;
+                        .comment-info{
+                            overflow: hidden;
+                            height: 40px;
+                            line-height: 40px;
+                            color: $assistFontColor;
+                            font-size: 14px;
+                           .avatar{
+                               float: left;
+                               width: 40px;
+                               height: 40px;
+                               border-radius: 50%;
+                           }
+                            .author{
+                                float: left;
+                                margin-left: 20px;
+                            }
+                            .pub-time{
+                                float: right;
+                            }
+                        }
+                        .comment-content{
+                            margin-left: 60px;
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

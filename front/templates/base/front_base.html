@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_742160_v6ig1rdkb1b.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_742160_n9izjtl6w1h.css">
+    <link rel="stylesheet" href="{% static  'css/common/auth.min.css' %}">
+    <link rel="stylesheet" href="{% static  'sweetalert/sweetalert2.min.css' %}">
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'sweetalert/sweetalert2.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/myajax.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/auth.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/front_base.js' %}" type="text/javascript"></script>
+    {% block head %}
+    {% endblock %}
+</head>
+{% csrf_token %}
+<body>
+    <!--头部开始-->
+    <header class="header">
+
+        <div class="container">
+
+            <div class="log-box">
+                <a href="#"></a>
+            </div>
+
+            <ul class="nav">
+                <li class="active"><a href="/">创业咨询</a></li>
+                <li><a href="{% url 'course:course_index' %}">创业课堂</a></li>
+                <li><a href="{% url 'payinfo:payinfo' %}">付费咨询</a></li>
+                <li><a href="{% url 'search' %}">搜索</a></li>
+            </ul>
+
+            <div class="auth-box" >
+                     <i class="icon-iconfonticonfontwode1 iconfont"></i>
+                {% if request.user.is_authenticated %}
+                    <a href="#">{{ request.user.username }}</a>
+                    <div class="service-bar" id="service-bar" style="display: none;">
+                        {% if user.is_staff %}
+                        <a href="{% url 'cms:index' %}">管理系统</a>
+                        {% endif %}
+
+                        <a href="{% url 'userauth:logout' %}">退出登录</a>
+                    </div>
+
+                    {% else %}
+                    <a href="#" class="signin-btn">登录</a> /
+                    <a href="#" class="signup-btn">注册</a>
+                {% endif %}
+
+            </div>
+
+        </div>
+    </header>
+    <!--头部结束-->
+
+    <!--主体部分开始-->
+    {% block main %}
+    {% endblock %}
+    <!--主体部分结束-->
+
+    <!--底部部分开始-->
+    <footer class="footer">
+        <div class="top-group">
+            <div class="top-inner-group">
+                <div class="log-box"></div>
+                <div class="detail-group">
+                    <div class="line1">
+                        <ul class="links">
+                            <li><a href="#">关于我们</a></li>
+                            <li><a href="#">创业课堂</a></li>
+                            <li><a href="#">寻求报道</a></li>
+                            <li><a href="#">创业礼包</a></li>
+                        </ul>
+                        <div class="about-as">
+                            <span class="title">关于我 &nbsp;: &nbsp;</span>
+                            <ul class="social-group">
+                                <li class="weinxin">
+                                    <div class="wx-image">
+
+                                    </div>
+                                   <span class="text">lian_xi0508</span>
+                                </li>
+                                <li class="weibo">
+                                    <a href="https://blog.csdn.net/weixin_41827390/article/" class="text">我的博客</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="line2">
+                        <p class="address">
+                            北京市: X.xx区 X.xx路X.xx楼X.xx层
+                        </p>
+                        <p class="contact">
+                            联系方式:  15234280837(随时接听)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <div class="bottom-group">
+           ©2018 北京X.xxxxxxxx有限公司 京ICP备X.xxxxxx号-1 | 增值电信业务经营许可证：京B2-X.xxxxx
+       </div>
+    </footer>
+    <!--底部部分结束-->
+    <div class="mask-wrapper">
+        <div class="auth-wrapper">
+            <div class="close-wrapper">
+                <span class="close-btn icon-close1170413easyiconnet iconfont"></span>
+            </div>
+            <div class="auth-inner-wrapper">
+                <div class="scroll-wrapper">
+                    <div class="signin-group auth-group">
+                        <div class="top-group">
+                            <span class="title">请登录</span>
+                            <a href="javascript: void (0);" class="switch">立即注册></a>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="telephone" placeholder="请输入手机号码">
+                            </div>
+                            <div class="input-group">
+                                <input type="password" class="form-control" name="password" placeholder="请输入密码">
+                            </div>
+                            <div class="input-group">
+                                <label class="remember-label"><input type="checkbox" name="remember" value="1">&nbsp;&nbsp;记住我</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="submit" class="submit-btn" value="立即登录">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="signup-group auth-group">
+                        <div class="top-group">
+                            <span class="title">请注册</span>
+                            <a href="javascript: void (0);" class="switch">立即登录></a>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="telephone" placeholder="请输入手机号码">
+                            </div>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="username" placeholder="请输入用户名">
+                            </div>
+{#                            <div class="input-group">#}
+{#                                <div class="short-input-group">#}
+{#                                    <input type="text" class="form-control" name="img_captcha" placeholder="验证码">#}
+{#                                </div>#}
+{#                                <div class="input-group-addon">#}
+{#                                    <img src="" alt="">#}
+{#                                </div>#}
+{#                            </div>#}
+                            <div class="input-group">
+                                <input type="password" class="form-control" name="password1" placeholder="请输入密码">
+                            </div>
+                            <div class="input-group">
+                                <input type="password" class="form-control" name="password2" placeholder="确认密码">
+                            </div>
+                            <div class="input-group">
+                                <div class="short-input-group">
+                                    <input type="text" class="form-control" name="sms_captcha" placeholder="短信验证码">
+                                </div>
+                                <div class="input-group-addon">
+                                    <span class="sms-captcha-btn">&nbsp;&nbsp;&nbsp;发送验证码&nbsp;&nbsp;&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <input type="submit" class="submit-btn" value="立即注册">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

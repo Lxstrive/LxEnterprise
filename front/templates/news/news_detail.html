@@ -1,0 +1,79 @@
+{% extends 'base/front_base.html' %}
+{% load staticfiles %}
+{% load news_filter %}
+{% block title %}
+    详情页
+{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/news/news_detail.min.css' %}">
+    <script src="{% static 'js/news_detail.js' %}" type="text/javascript"></script>
+    <script src="{% static 'arttemplate/template-web.js' %}"></script>
+    <script id="comment-item" type="text/html">
+        {% verbatim %}
+        <li>
+            <div class="comment-info">
+                <img src="../../dist/images/myimg.jpg" alt="" class="avatar">
+                <span class="author">{{ comment.author.username }}</span>
+                <span class="pub-time">{{ comment.pub_time|timeSince }}</span>
+            </div>
+            <p class="comment-content">
+                {{ comment.content }}
+            </p>
+        </li>
+       {% endverbatim %}
+    </script>
+{% endblock %}
+
+{% block main %}
+   <div class="main">
+        <div class="wrapper">
+            <div class="main-content-wrapper">
+                <div class="news-wrapper">
+                    <h1 class="title">
+                        {{ news.title }}
+                    </h1>
+                    <div class="news-info">
+                        <div class="info-group">
+                            <span class="author">{{ news.author.username }}</span>
+                            <span class="pub-time">{{ news.pub_time|time_since }}</span>
+                            <span class="category">{{ news.category.name }}</span>
+                        </div>
+{#                        <div class="share-group">#}
+{#                            <span>分享至 :</span>#}
+{#                            <a class="weixin"></a>#}
+{#                            <a class="weibo" href="#"></a>#}
+{#                        </div>#}
+                    </div>
+                    <article class="article">
+                        <p style="text-align: center;"><img src="{{ MEDIA_URL }}{{ news.thumbnail }}" title="" alt="20171025034229851.jpg"></p>
+                        <p>{{ news.content|safe }}</p>
+                    </article>
+                </div>
+                <div class="comment-wrapper">
+                    <h3 class="title">文章评论  (0)</h3>
+                    <textarea name="comment" class="comment-textarea logined-textarea" placeholder="立即登录, 参与评论" >
+
+                    </textarea>
+                    <div class="submit-btn-group">
+                        <button class="submit-btn" data-news-id="{{ news.pk }}">立即评论</button>
+                    </div>
+                    <ul class="comment-list">
+                        {% for comment in news.comments.all %}
+                        <li>
+                            <div class="comment-info">
+                                <img src="{% static 'images/myimg.jpg' %}" alt="" class="avatar">
+                                <span class="author">{{ comment.author.username }}</span>
+                                <span class="pub-time">{{ comment.pub_time|time_since }}</span>
+                            </div>
+                            <p class="comment-content">
+                                {{ comment.content }}
+                            </p>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% include 'common/siderbar.html' %}
+        </div>
+    </div>
+{% endblock %}

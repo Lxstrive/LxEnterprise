@@ -1,0 +1,21 @@
+@import "../common/init.scss";
+@import "../common/constants.scss";
+@import "../common/header.scss";
+@import "../common/footer.scss";
+@import "../common/body.scss";
+@import "../common/news_list.scss";
+
+.main{
+    .wrapper{
+        .banner{
+            width: $bannerWidth;
+            height: $bannerHeight;
+            img{
+              width: 100%;
+              height: 100%;
+            }
+
+        }
+
+    }
+}

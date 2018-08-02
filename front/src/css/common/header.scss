@@ -1,0 +1,82 @@
+@import "init.scss";
+@import "constants.scss";
+//头部样式开始
+.header{
+  width:100%;
+  height:$navHeight;
+  background: #3a3a3a;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  .container{
+    width: $pageWidth;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    .log-box{
+      width: 156px;
+      height: $navHeight;
+      padding-right: 50px;
+      margin-top: 8px;
+      //background: url("https://www.bufanbiz.com/static/build/images/new-normal-logo.png") no-repeat;
+      background: url('../../images/logo.png') no-repeat;
+      float: left;
+      a{
+        display: block;
+        width:100%;
+        height: 100%;
+      }
+
+    }
+    .nav{
+      margin-left: 70px;
+      float: left;
+      li{
+        float: left;
+        margin-right: 40px;
+        line-height: $navHeight;
+        height: $navHeight;
+        box-sizing: border-box;
+        a{
+          color: #ffffff;
+        }
+        &.active{
+          border-bottom: 5px solid #5c87d9;
+        }
+      }
+    }
+    .auth-box{
+      float: right;
+      line-height:$navHeight;
+      color: #ffffff;
+      .icon-iconfonticonfontwode1{
+        color: #ffffff;
+        font-size: 25px;
+      }
+      a{
+        color: #ffffff;
+
+      }
+    }
+    .service-bar{
+          position: absolute;
+          z-index: 99999;
+          box-shadow: 0 3px 4px #ccc;
+          background: #FFFFFF;
+          width: 140px;
+          border-radius: 5px;
+          text-align: center;
+          a{
+              color: #5c87d9;
+              display: block;
+              line-height: 40px;
+              &:hover{
+                  background: #f7766a;
+              }
+          }
+    }
+  }
+}
+//头部样式结束

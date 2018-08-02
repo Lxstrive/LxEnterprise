@@ -1,0 +1,120 @@
+@import "constants.scss";
+@import "init.scss";
+//底部样式开始
+.footer {
+  font-size: 14px;
+  color: #c9c9c9;
+  padding-top: 20px;
+  .top-group {
+    background: #555e67;
+    height: 100px;
+    padding-top: 25px;
+    box-sizing: border-box;
+    .top-inner-group {
+      width: $pageWidth;
+      margin: 0 auto;
+      //overflow: hidden;
+      position: relative;
+
+      .log-box {
+        width: 160px;
+        height: 54px;
+        float: left;
+        background: url('../../images/logo.png') no-repeat;
+        background-size: 150%;
+      }
+      .detail-group {
+        float: left;
+        margin-left: 100px;
+        .line1 {
+          overflow: hidden;
+          .links {
+            float: left;
+            overflow: hidden;
+            li {
+              float: left;
+              padding: 0 10px;
+
+              &:first-of-type {
+                padding-left: 0;
+              }
+              &:last-of-type {
+                border-right: none;
+              }
+              a {
+                color: #c9c9c9;
+              }
+              border-right: 1px solid #c9c9c9;
+            }
+          }
+          .about-as {
+            float: left;
+            margin-left: 40px;
+            overflow: hidden;
+            .title{
+              float: left;
+            }
+            .social-group {
+              float: left;
+              overflow: hidden;
+
+              li {
+                float: left;
+                overflow: hidden;
+                .text {
+                  margin-left: 30px;
+                  color: #ffffff;
+                }
+              }
+
+              .weinxin {
+                background: url("../../images/wxx.png") no-repeat;
+                background-size: 25%;
+                cursor: pointer;
+                &:hover .wx-image{
+                  display: block;
+
+                }
+                .wx-image{
+                  width: 204px;
+                  height: 204px;
+                  background: url("../../images/weix.png") no-repeat;
+                  background-size: 100%;
+                  position: absolute;
+                  top: -220px;
+                  right: 400px;
+                  display: none;
+                }
+              }
+              .weibo {
+                margin-left: 20px;
+                background: url("../../images/xl.png") no-repeat;
+                background-size: 35%;
+              }
+            }
+          }
+        }
+
+        .line2 {
+          overflow: hidden;
+          margin-top: 20px;
+          .address {
+            float: left;
+          }
+          .contact {
+            float: left;
+            margin-left: 40px;
+          }
+        }
+      }
+    }
+  }
+  .bottom-group {
+    background: #3a3a3a;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+  }
+}
+
+//底部样式结束
