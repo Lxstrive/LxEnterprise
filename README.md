@@ -26,7 +26,7 @@
 
 >>前端语言:html/css/js/ajax/jquery/ 插件:gulp
 
->>后端语言:python
+>>后端语言:python3.x
 
 >>框架: django-2.0/djangorestframework
 
