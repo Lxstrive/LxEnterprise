@@ -1,4 +1,5 @@
 # LxEnterprise 企业官网项目(Django2.0, python3.x)
+## [我的csdn](https://blog.csdn.net/weixin_41827390/)
 
 ### 下载项目到本地
 
