@@ -1,6 +1,7 @@
 # LxEnterprise 企业官网项目(Django2.0, python3.x)
 ### clone项目到本地
-    *进入到项目所在目录找到requirements.txt安装项目所需环境*
+
+    进入到项目所在目录找到`requirements.txt`安装项目所需环境
     
     pip install -r requirements.txt
     
