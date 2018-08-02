@@ -4,18 +4,21 @@
 
 
 
->>进入到项目所在目录找到` requirements.txt `安装项目所需环境
+>>1.进入到项目所在目录找到` requirements.txt `安装项目所需环境
 
->>pip install -r requirements.txt
+>>2.pip install -r requirements.txt
 
->>安装mysql数据库 密码 ：123456
+>>3.安装mysql数据库 密码 ：123456
 
->>新建数据库  数据库名  django_combat
+>>4.新建数据库  数据库名  django_combat
 
->>导入项目目录下的django_combat.sql文件
+>>5.导入项目目录下的django_combat.sql文件
 
->>python manage.py runserver 
+>>6.python manage.py runserver 
 
->>浏览器中访问 127.0.0.1:8000访问
+>>7.浏览器中访问 127.0.0.1:8000访问
    
 
+
+
+### 项目介绍
